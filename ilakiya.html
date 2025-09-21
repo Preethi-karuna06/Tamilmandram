@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="ta">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>இலக்கியக் குழு</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="stylesheet" href="web.css">
+</head>
+<style>
+   .video-section {
+  padding: 50px 20px;
+  text-align: center;
+ 
+}
+
+.video-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.video-container video {
+  width: 300px;   /* 👈 fixed width */
+  height: 500px;  /* 👈 fixed height for vertical look */
+  border-radius: 15px;
+  border: 3px solid #d4af37;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.3);
+  object-fit: cover; /* keeps video inside neatly */
+}
+    .spotify-section {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 60px 20px;
+ 
+}
+
+.spotify-card {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+
+  border-radius: 20px;
+  box-shadow: 0 8px 25px rgba(0,0,0,0.15);
+  max-width: 900px;
+  overflow: hidden;
+  transition: transform 0.3s ease-in-out;
+}
+
+.spotify-card:hover {
+  transform: translateY(-6px);
+}
+
+.spotify-image {
+  width: 100%;
+  max-width: 350px;
+  object-fit: cover;
+  border-right: 5px solid #d32f2f;
+}
+
+.spotify-content {
+  flex: 1;
+  padding: 25px;
+  text-align: left;
+}
+
+.spotify-content h3 {
+  color: #d32f2f;
+  margin-bottom: 12px;
+}
+
+.spotify-content p {
+  font-size: 1rem;
+  color: #212121;
+  margin-bottom: 20px;
+}
+
+.spotify-btn {
+  display: inline-block;
+  padding: 12px 24px;
+  background-color: #1db954;
+  color: #ffffff;
+  font-weight: bold;
+  border-radius: 30px;
+  text-decoration: none;
+  font-size: 1rem;
+  transition: background 0.3s, transform 0.2s;
+}
+
+.spotify-btn:hover {
+  background-color: #14833b;
+  transform: scale(1.05);
+}
+    .kuzhu-hero {
+            height: 70vh;
+            background-image: url('images/ilakkiya.jpeg');
+            background-size: cover;
+            background-position: center;
+            position: relative;
+            margin-top: 70px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--primary-white);
+        }
+</style>
+<body>
+     <!-- Kuzhu Hero Section -->
+    <section class="kuzhu-hero">
+        <div class="kuzhu-hero-content">
+            <h1 class="tamil-text">இலக்கியக் குழு</h1>
+            <p class="tamil-text">தமிழ் இலக்கியம், கவிதை, கதை சொல்லல்.</p>
+        </div>
+    </section>
+        <div class="events-container">
+            <div class="event-section">
+                <div class="event-content">
+                    <div class="red-line"></div>
+                    <h2>இலக்கியக் குழு</h2>
+                    <p>எம்.ஐ.டி தமிழ் மன்றத்தின் இலக்கியக் குழு, தமிழின் இலக்கிய நயங்களை அறியவும் அனுபவிக்கவும் வாரந்தோறும் கலந்துரையாடல் அமர்வுகளை நடத்துகிறது. இங்கு மாணவர்கள் சிந்திக்கத்தக்க இனிமையான உரையாடல்கள், வாசிப்புகள் மற்றும் சிறு பயிற்சிகள் மூலம் இலக்கியத்தின் ஆழத்தைப் புரிந்து கொள்கிறார்கள்.
+</p>
+                </div>
+                <div class="event-media">
+                    <img src="images/ilakkiya.jpeg" alt="Art Exhibition" class="event-image">
+                </div>
+            </div>
+    <section class="sessions" id="sessions">
+        <div class="container">
+            <div class="section-title">
+                <h2 class="tamil-text">பயிற்சி நாட்கள் மற்றும் நேரம்</h2>
+            </div>
+            <div class="session-cards">
+                <div class="session-card">
+                    <h3><i class="fas fa-calendar-alt"></i> <span class="tamil-text">பயிற்சி நாள்</span></h3>
+                    <p><i class="fas fa-clock"></i> <span class="tamil-text">திங்கள் : 4.30 - 6.00</span></p>
+                    <p><i class="fas fa-map-marker-alt"></i> <span class="tamil-text">பயிற்சித் திடல்: திறந்த வெளி அரங்கம், எம்.ஐ.டி வளாகம்</span></p>
+                </div>
+            
+               
+            </div>
+        </div>
+    </section>
+    <div class="chart-box">
+    <div class="chart-title">செயல்பாடுகள்:</div>
+    <div class="divider"></div>
+  
+    <ul>
+      <li>எம்.ஐ.டி தமிழ் மன்றத்தின் பெருமை – “வலையொலி – நீ நான் தமிழ்”. இவ் வலையொலியின் உரையாசிரியர்களையும் பேச்சாளர்களையும் பயிற்றுவித்து உருவாக்குகிறது இக்குழு.
+</li>
+      <li>மாணவர்களின் உரை எழுதும் திறன், பேச்சு திறன் மற்றும் கற்பனை நயத்தை மேம்படுத்தும் நோக்கில் சிறப்பு அமர்வுகள் நடத்தப்படுகின்றன.</li>
+      <li>தமிழ்ப் பண்பாட்டுப் பெருவிழாவில் பிற கல்லூரி மாணவர்கள் பங்குபெறும் பேச்சுப் போட்டி, கட்டுரை போட்டி, கவிதைப் போட்டி  போன்ற நிகழ்ச்சிகளை ஏற்பாடு செய்தல்.</li>
+    </ul>
+  </div>
+<!-- Spotify Podcast Section -->
+<div class="spotify-section">
+  <div class="spotify-card">
+    <img src="images/nee naan tamil.png" alt="Silapathigaram Story" class="spotify-image">
+    <div class="spotify-content">
+      <h3 class="tamil-text">🎧 வலையொலி – நீ நான் தமிழ்</h3>
+      <p class="tamil-text">
+        எம்.ஐ.டி தமிழ் மன்றத்தின் சொந்த வலையொலி!<br>
+        இலக்கியமும், பாரம்பரியக் கதைகளும், மாணவர்களின் படைப்பாற்றலும் ஒன்றாக.
+      </p>
+      <a href="https://open.spotify.com/show/0xhBNJSyndEqFTLvB2T8ZD?si=fIMx62rlRYa9Y6an1lvgvQ" target="_blank" class="spotify-btn">
+        <i class="fa-brands fa-spotify"></i> கேட்க செல்லவும்
+      </a>
+    </div>
+  </div>
+</div>
+<!-- Video Section -->
+<div class="video-section">
+  <div class="section-title">
+    <h2 class="tamil-text">🎬 இலக்கியக் காட்சி</h2>
+  </div>
+  <div class="video-container">
+     <video controls>
+      <source src="images/ilakiyavideo.mp4" type="video/mp4">
+      உங்களின் உலாவி வீடியோவை ஆதரிக்கவில்லை.
+    </video>
+</div>
+</div>
+</div>
+</body>

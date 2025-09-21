@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="ta">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>பத்திரிக்கைக் குழு</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="stylesheet" href="web.css">
+</head>
+<style>
+   :root {
+  --primary-red: #d32f2f;
+  --primary-black: #212121;
+  --primary-white: #ffffff;
+  --accent-gold: #d4af37;
+  --light-gray: #f5f5f5;
+}
+
+.ezhili-download {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0px 0;
+  padding: 50px 20px;
+
+  /* Elegant light background with cultural colors */
+  background-size: 90px 90px;
+}
+
+.ezhili-card {
+  background: var(--primary-white);
+  text-align: center;
+  padding: 20px;
+  border-radius: 20px;
+  max-width: 420px;
+  box-shadow: 0 10px 28px rgba(0, 0, 0, 0.15);
+  border: 2px solid var(--accent-gold);
+  transition: transform 0.3s ease-in-out, box-shadow 0.3s;
+}
+
+.ezhili-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 12px 32px rgba(0,0,0,0.25);
+}
+
+.ezhili-card i {
+  color: var(--primary-red);
+  margin-bottom: 15px;
+}
+
+.ezhili-card h3 {
+  margin-bottom: 8px;
+  font-size: 1.6rem;
+  color: var(--primary-black);
+}
+
+.ezhili-card p {
+  color: var(--primary-black);
+  font-size: 1rem;
+  margin-bottom: 18px;
+}
+
+.download-btn {
+  display: inline-block;
+  margin-top: 10px;
+  padding: 12px 10px;
+  background-color: var(--primary-red);
+  color: var(--primary-white);
+  font-weight: bold;
+  border-radius: 30px;
+  text-decoration: none;
+  transition: background 0.3s, transform 0.2s, box-shadow 0.2s;
+  box-shadow: 0 4px 10px rgba(211, 47, 47, 0.3);
+}
+
+.download-btn:hover {
+  background-color: var(--accent-gold);
+  color: var(--primary-black);
+  transform: scale(1.05);
+  box-shadow: 0 6px 14px rgba(0,0,0,0.3);
+}
+    .kuzhu-hero {
+            height: 70vh;
+            background-image: url('images/pathirikai1.png');
+            background-size: cover;
+            background-position: center;
+            position: relative;
+            margin-top: 70px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--primary-white);
+        }
+</style>
+<body>
+     <!-- Kuzhu Hero Section -->
+    <section class="kuzhu-hero">
+        <div class="kuzhu-hero-content">
+            <h1 class="tamil-text">பத்திரிக்கைக் குழு</h1>
+            <p class="tamil-text">இதழியல் மற்றும் ஊடகக் குழு</p>
+        </div>
+    </section>
+        <div class="events-container">
+            <div class="event-section">
+                <div class="event-content">
+                    <div class="red-line"></div>
+                    <h2>பத்திரிக்கைக் குழு</h2>
+                    <p>எம.ஐ.டி தமிழ் மன்றத்தின் இன்றியமையா ஆவணப் பொறுப்புகளைச் சிறப்பாக மேற்கொண்டு வருகிறது பத்திரிக்கைக் குழு. மன்றத்தின் அனைத்து நிகழ்வுகளுக்கும் விரிவான அறிக்கைகளைத் தயாரித்து, அந்த நிகழ்வுகளின் சிறப்புகளை மாணவர்களிடம் பகிர்வதில் இக்குழு முக்கியப் பங்கு வகிக்கிறது.
+</p>
+                </div>
+                <div class="event-media">
+                    <img src="images/pathirikai1.png" alt="Art Exhibition" class="event-image" >
+                </div>
+            </div>
+    <div class="chart-box" style="margin-top: 60px 20px;">
+    <div class="chart-title">செயல்பாடுகள்:</div>
+    <div class="divider"></div>
+  
+    <ul>
+      <li>மன்றத்தின் வருடாந்திர இதழான எழிலி-யின் வெளியீடு,  இக்குழுவின் பெரும் பணியாகும். இவ்விதழில், நம் மாணவர்களின் சுய படைப்புகளான கவிதைகள், கட்டுரைகள், ஓவியங்கள் மற்றும் பல படைப்புகள் வெளியிடப்படுகின்றன. இதன் வழியாக மாணவர்களின் படைப்பாற்றலும், தமிழ்மன்றத்தின் பணிகளும் ஒரே மேடையில் வெளிப்படுகின்றன.
+</li>
+     
+    </ul>
+  </div>
+<!-- Ezhili Book Download Section -->
+<div class="ezhili-download">
+  <div class="ezhili-card">
+    <i class="fa-solid fa-book-open-reader fa-3x"></i>
+    <h3 class="tamil-text">எழிலி இதழ்</h3>
+    <p class="tamil-text">
+      தமிழ்மன்றத்தின் மாணவர்கள் படைப்பாற்றலை வெளிப்படுத்தும் வருடாந்திர இதழ்.
+    </p>
+    <a href="https://drive.google.com/file/d/1dQ0801fCy2CMaWEPWGnd3Gs7Se_AwpgN/view?usp=sharing" target="_blank" class="download-btn">
+      <i class="fa-solid fa-download"></i> பதிவிறக்க
+    </a>
+  </div>
+</div>
+  
+
+ </div>
+</body>

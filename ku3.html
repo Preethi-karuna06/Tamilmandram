@@ -1,0 +1,877 @@
+    <!DOCTYPE html>
+    <html lang="ta">
+    <link rel="stylesheet" href="web.css">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>தமிழ் மன்றம் | Tamil Mandram</title>
+        <style>
+            :root {
+                --primary-red: #d32f2f;
+                --primary-black: #212121;
+                --primary-white: #ffffff;
+                --accent-gold: #d4af37;
+                --light-gray: #f5f5f5;
+            }
+            
+            * {
+                margin: 0;
+                padding: 0;
+                box-sizing: border-box;
+                font-family: 'Hind Madurai', 'Poppins', sans-serif;
+            }
+            
+              body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+    background-size: cover;   /* make sure it covers full screen */
+    background-position: center; /* keep it centered */
+    background-repeat: no-repeat; /* prevent tiling */
+}
+            
+            .header {
+                background-color: var(--primary-black);
+                padding: 15px 0;
+                position: fixed;
+                width: 100%;
+                top: 0;
+                z-index: 1000;
+            }
+            
+            .container {
+                width: 90%;
+                max-width: 1200px;
+                margin: 0 auto;
+            }
+            
+            .nav-container {
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+            }
+            
+            .logo-container {
+                display: flex;
+                align-items: center;
+            }
+            
+            .logo {
+                width: 60px;
+                height: auto;
+            }
+            
+            .title {
+                margin-left: 15px;
+                color: var(--primary-white);
+            }
+            
+            .title h1 {
+                font-size: 24px;
+                margin-bottom: 0;
+            }
+            
+            .title h2 {
+                font-size: 16px;
+                color: var(--accent-gold);
+            }
+            
+            .nav-menu {
+                display: flex;
+            }
+            
+            .nav-menu a {
+                color: var(--primary-white);
+                text-decoration: none;
+                margin-left: 20px;
+                font-size: 16px;
+                transition: color 0.3s ease;
+            }
+            
+            .nav-menu a:hover {
+                color: var(--accent-gold);
+            }
+            
+            .language-toggle {
+                background-color: var(--primary-red);
+                color: var(--primary-white);
+                border: none;
+                padding: 8px 15px;
+                border-radius: 5px;
+                cursor: pointer;
+                font-weight: bold;
+                margin-left: 20px;
+            }
+            
+            .hero {
+                background: url('images/grouptm.jpeg') no-repeat center center/cover;
+                height: 100vh;
+                position: relative;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                text-align: center;
+                color: var(--primary-white);
+                margin-top: 70px;
+            }
+            
+            .hero::before {
+                content: '';
+                position: absolute;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+              
+            }
+            
+            .hero-content {
+                position: relative;
+                z-index: 10;
+                max-width: 800px;
+                padding: 0 20px;
+            }
+            
+            .hero-content h2 {
+                font-size: 60px;
+                margin-bottom: 20px;
+                text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+            }
+            
+            .hero-content p {
+                font-size: 20px;
+                margin-bottom: 30px;
+            }
+            
+            .btn {
+                display: inline-block;
+                background-color: var(--primary-red);
+                color: var(--primary-white);
+                padding: 12px 30px;
+                border-radius: 30px;
+                text-decoration: none;
+                font-weight: bold;
+                transition: transform 0.3s ease, background-color 0.3s ease;
+                border: 2px solid var(--primary-red);
+            }
+            
+            .btn:hover {
+                transform: translateY(-5px);
+                background-color: transparent;
+            }
+            
+            .section-title {
+                text-align: center;
+                margin-bottom: 50px;
+                position: relative;
+            }
+            
+            .section-title h2 {
+                font-size: 36px;
+                color: var(--primary-black);
+                margin-bottom: 10px;
+                display: inline-block;
+            }
+            
+            .section-title h2::after {
+                content: '';
+                display: block;
+                width: 60%;
+                height: 3px;
+                background-color: var(--primary-red);
+                margin: 10px auto 0;
+            }
+            
+            .section-title p {
+                font-size: 18px;
+                color: var(--primary-red);
+            }
+            
+            .kuzhus-container {
+                padding: 100px 0;
+            }
+            
+            .kuzhus-grid {
+                display: grid;
+                grid-template-columns: repeat(3, 1fr);
+                gap: 30px;
+            }
+            
+            .kuzhu-card {
+                position: relative;
+                height: 300px;
+                border-radius: 10px;
+                overflow: hidden;
+                box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+                transition: transform 0.5s ease;
+            }
+            
+            .kuzhu-card:hover {
+                transform: translateY(-10px);
+            }
+            
+            .kuzhu-card img {
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+                transition: transform 0.5s ease;
+            }
+            
+            .kuzhu-card:hover img {
+                transform: scale(1.1);
+            }
+            
+            .kuzhu-overlay {
+                position: absolute;
+                bottom: 0;
+                left: 0;
+                right: 0;
+                background: linear-gradient(transparent, rgba(0,0,0,0.8));
+                padding: 20px;
+                color: var(--primary-white);
+                transition: height 0.5s ease;
+                height: 30%;
+            }
+            
+            .kuzhu-card:hover .kuzhu-overlay {
+                height: 50%;
+            }
+            
+            .kuzhu-overlay h3 {
+                font-size: 24px;
+                margin-bottom: 10px;
+            }
+            
+            .kuzhu-overlay p {
+                font-size: 14px;
+                opacity: 0;
+                transform: translateY(20px);
+                transition: opacity 0.5s ease, transform 0.5s ease;
+            }
+            
+            .kuzhu-card:hover .kuzhu-overlay p {
+                opacity: 1;
+                transform: translateY(0);
+            }
+            
+            .kuzhu-btn {
+                position: absolute;
+                bottom: 20px;
+                right: 20px;
+                background-color: var(--primary-red);
+                color: var(--primary-white);
+                padding: 8px 15px;
+                border-radius: 20px;
+                text-decoration: none;
+                font-size: 14px;
+                opacity: 0;
+                transform: translateY(20px);
+                transition: opacity 0.5s ease, transform 0.5s ease, background-color 0.3s ease;
+            }
+            
+            .kuzhu-card:hover .kuzhu-btn {
+                opacity: 1;
+                transform: translateY(0);
+            }
+            
+            .kuzhu-btn:hover {
+                background-color: var(--accent-gold);
+            }
+            
+            .footer {
+                background-color: var(--primary-black);
+                color: var(--primary-white);
+                padding: 50px 0 20px;
+            }
+            
+            .footer-content {
+                display: flex;
+                justify-content: space-between;
+                margin-bottom: 40px;
+            }
+            
+            .footer-logo {
+                flex: 1;
+            }
+            
+            .footer-logo img {
+                width: 80px;
+                margin-bottom: 15px;
+            }
+            
+            .footer-logo p {
+                font-size: 14px;
+                line-height: 1.6;
+                max-width: 300px;
+            }
+            
+            .footer-links {
+                flex: 1;
+                display: flex;
+                justify-content: space-around;
+            }
+            
+            .footer-links-column h4 {
+                font-size: 18px;
+                margin-bottom: 20px;
+                color: var(--accent-gold);
+            }
+            
+            .footer-links-column ul {
+                list-style: none;
+            }
+            
+            .footer-links-column ul li {
+                margin-bottom: 10px;
+            }
+            
+            .footer-links-column ul li a {
+                color: var(--primary-white);
+                text-decoration: none;
+                transition: color 0.3s ease;
+                font-size: 14px;
+            }
+            
+            .footer-links-column ul li a:hover {
+                color: var(--primary-red);
+            }
+            
+            .footer-bottom {
+                text-align: center;
+                padding-top: 20px;
+                border-top: 1px solid rgba(255,255,255,0.1);
+            }
+            
+            .footer-bottom p {
+                font-size: 14px;
+            }
+            
+            /* Kuzhu Page Styles */
+            .kuzhu-hero {
+                height: 70vh;
+                background-size: cover;
+                background-position: center;
+                position: relative;
+                margin-top: 70px;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                color: var(--primary-white);
+            }
+            
+            .kuzhu-hero::before {
+                content: '';
+                position: absolute;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+                background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5));
+            }
+            
+            .kuzhu-hero-content {
+                position: relative;
+                z-index: 10;
+                text-align: center;
+                max-width: 800px;
+                padding: 0 20px;
+            }
+            
+            .kuzhu-hero-content h1 {
+                font-size: 60px;
+                margin-bottom: 20px;
+                text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+            }
+            
+            .kuzhu-hero-content p {
+                font-size: 20px;
+                margin-bottom: 30px;
+            }
+            
+            .kuzhu-info-section {
+                padding: 80px 0;
+            }
+            
+            .kuzhu-info-tabs {
+                display: flex;
+                border-bottom: 2px solid var(--light-gray);
+                margin-bottom: 30px;
+            }
+            
+            .kuzhu-tab {
+                padding: 15px 30px;
+                cursor: pointer;
+                font-weight: bold;
+                position: relative;
+            }
+            
+            .kuzhu-tab.active {
+                color: var(--primary-red);
+            }
+            
+            .kuzhu-tab.active::after {
+                content: '';
+                position: absolute;
+                bottom: -2px;
+                left: 0;
+                width: 100%;
+                height: 2px;
+                background-color: var(--primary-red);
+            }
+            
+            .kuzhu-tab-content {
+                display: none;
+                animation: fadeIn 0.5s ease forwards;
+            }
+            
+            .kuzhu-tab-content.active {
+                display: block;
+            }
+            
+            @keyframes fadeIn {
+                from { opacity: 0; }
+                to { opacity: 1; }
+            }
+            
+            .kuzhu-description {
+                line-height: 1.8;
+                font-size: 16px;
+            }
+            
+            .kuzhu-sessions {
+                line-height: 1.8;
+                font-size: 16px;
+            }
+            
+            .session-card {
+                background-color: var(--light-gray);
+                padding: 20px;
+                border-radius: 10px;
+                margin-bottom: 20px;
+            }
+            
+            .session-card h4 {
+                font-size: 18px;
+                margin-bottom: 10px;
+                color: var(--primary-red);
+            }
+            
+            .session-card p {
+                font-size: 16px;
+                margin-bottom: 10px;
+            }
+            
+            .session-card .session-time {
+                display: flex;
+                align-items: center;
+                margin-top: 10px;
+            }
+            
+            .session-card .session-time i {
+                margin-right: 10px;
+                color: var(--primary-red);
+            }
+            
+            .kuzhu-activities ul {
+                list-style-type: none;
+                padding-left: 0;
+            }
+            
+            .kuzhu-activities ul li {
+                position: relative;
+                padding-left: 30px;
+                margin-bottom: 15px;
+                line-height: 1.6;
+            }
+            
+            .kuzhu-activities ul li::before {
+                content: '';
+                position: absolute;
+                left: 0;
+                top: 8px;
+                width: 10px;
+                height: 10px;
+                background-color: var(--primary-red);
+                border-radius: 50%;
+            }
+            
+            .kuzhu-gallery {
+                margin-top: 50px;
+            }
+            
+            .kuzhu-gallery h3 {
+                font-size: 24px;
+                margin-bottom: 20px;
+                position: relative;
+                display: inline-block;
+            }
+            
+            .kuzhu-gallery h3::after {
+                content: '';
+                position: absolute;
+                bottom: -5px;
+                left: 0;
+                width: 50%;
+                height: 2px;
+                background-color: var(--primary-red);
+            }
+            
+            .kuzhu-gallery-grid {
+                display: grid;
+                grid-template-columns: repeat(3, 1fr);
+                gap: 20px;
+            }
+            
+            .kuzhu-gallery-item {
+                height: 250px;
+                border-radius: 10px;
+                overflow: hidden;
+            }
+            
+            .kuzhu-gallery-item img {
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+                transition: transform 0.3s ease;
+            }
+            
+            .kuzhu-gallery-item:hover img {
+                transform: scale(1.1);
+            }
+            
+            /* Responsive Styles */
+            @media (max-width: 992px) {
+                .kuzhus-grid {
+                    grid-template-columns: repeat(2, 1fr);
+                }
+                
+                .about-content {
+                    flex-direction: column;
+                }
+                
+                .gallery-grid {
+                    grid-template-columns: repeat(2, 1fr);
+                }
+                
+                .gallery-item:nth-child(1) {
+                    grid-column: span 1;
+                    grid-row: span 1;
+                }
+                
+                .gallery-item:nth-child(4) {
+                    grid-column: span 1;
+                }
+                
+                .footer-content {
+                    flex-direction: column;
+                }
+                
+                .footer-logo {
+                    margin-bottom: 30px;
+                }
+                
+                .kuzhu-gallery-grid {
+                    grid-template-columns: repeat(2, 1fr);
+                }
+            }
+            
+            @media (max-width: 768px) {
+                .nav-menu {
+                    display: none;
+                }
+                
+                .hero-content h2 {
+                    font-size: 40px;
+                }
+                
+                .kuzhus-grid {
+                    grid-template-columns: 1fr;
+                }
+                
+                .gallery-grid {
+                    grid-template-columns: 1fr;
+                }
+                
+                .kuzhu-hero-content h1 {
+                    font-size: 40px;
+                }
+                
+                .kuzhu-gallery-grid {
+                    grid-template-columns: 1fr;
+                }
+                
+                .kuzhu-tab {
+                    padding: 10px 15px;
+                    font-size: 14px;
+                }
+            }
+        </style>
+        <link href="https://fonts.googleapis.com/css2?family=Hind+Madurai:wght@300;400;500;600;700&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    </head>
+    <body>
+        <!-- Header -->
+        <header class="header">
+            <div class="container">
+                <div class="nav-container">
+                    <div class="logo-container">
+                        <img src="logo.png" alt="Tamil Mandram Logo" class="logo">
+                        <div class="title">
+                            <h1>தமிழ் மன்றம்</h1>
+                            <h2>Tamil Mandram</h2>
+                        </div>
+                    </div>
+                    <div class="nav-menu">
+                        <a href="index.html">முகப்பு</a>
+                        <a href="#kuzhus">குழுக்கள்</a>
+                        <a href="#gallery">புகைப்படங்கள்</a>
+                        <a href="#contact">தொடர்பு</a>
+                        <button class="language-toggle" id="langToggle">English</button>
+                    </div>
+                </div>
+            </div>
+        </header>
+        <!-- Navigation -->
+  <nav class="main-nav">
+    <a href="#" class="nav-logo-link">
+      <img src="tm3.jpg" alt="Tamil Mandram Logo" class="nav-logo">
+    </a>
+    <div class="nav-links-desktop">
+      <a href="#about">நோக்கம்</a>
+      <a href="#highlights">நிகழ்வுகள்</a>
+      <a href="#clubs">குழுக்கள்</a>
+      <a href="#staff">பொறுப்பாளர்</a>
+      <a href="#alumni">பழைய மாணவர்</a>
+      <a href="#gallery">காட்சியகம்</a>
+      <a href="#contact">தொடர்பு</a>
+    </div>
+    <button class="mobile-nav-toggle" aria-label="Open navigation menu">
+      <span class="bar"></span>
+      <span class="bar"></span>
+      <span class="bar"></span>
+    </button>
+  </nav>
+
+  <div class="mobile-nav-menu">
+    <a href="#about">நோக்கம்</a>
+    <a href="#highlights">நிகழ்வுகள்</a>
+    <a href="#clubs">குழுக்கள்</a>
+    <a href="#staff">பொறுப்பாளர்</a>
+    <a href="#alumni">பழைய மாணவர்</a>
+    <a href="#gallery">காட்சியகம்</a>
+    <a href="#contact">தொடர்பு</a>
+  </div>
+
+        <!-- Hero Section -->
+        <section class="hero">
+            <div class="hero-content">
+                <h2 class="tamil-text">தமிழ் மன்றத்திற்கு வரவேற்கிறோம்</h2>
+                <p class="tamil-text">எங்களின் பல்வேறு கலாச்சார குழுக்களை ஆராய்ந்து தமிழ் பாரம்பரியத்தில் உங்களை ஈடுபடுத்திக் கொள்ளுங்கள்</p>
+                <a href="#kuzhus" class="btn tamil-text">குழுக்களைப் பார்க்க</a>
+            </div>
+        </section>
+
+        <!-- Kuzhus Section -->
+        <section class="kuzhus-container" id="kuzhus">
+            <div class="container">
+                <div class="section-title">
+                    <h2 class="tamil-text">எங்கள் குழுக்கள்</h2>
+                    <p class="tamil-text">எங்களின் பல்வேறு கலாச்சார குழுக்களை ஆராயுங்கள்</p>
+                </div>
+
+                <div class="kuzhus-grid">
+                    <!-- Silambam Kuzhu -->
+                    <div class="kuzhu-card">
+                        <img src="images/silambam4.JPG" alt="Silambam">
+                        <div class="kuzhu-overlay">
+                            <h3 class="tamil-text">சிலம்பம்</h3>
+                            <p class="tamil-text"> பாரம்பரிய தமிழ் போர்க்கலை.</p>
+                            <a href="silambam.html" class="kuzhu-btn tamil-text">மேலும் அறிய</a>
+                        </div>
+                    </div>
+
+                    <!-- Parai Kuzhu -->
+                    <div class="kuzhu-card">
+                        <img src="images/parai1.JPG" alt="Parai">
+                        <div class="kuzhu-overlay">
+                            <h3 class="tamil-text">பறை</h3>
+                            <p class="tamil-text">பழங்கால தாள வாத்தியம் மற்றும் கலை வடிவம்.</p>
+                            <a href="parai.html" class="kuzhu-btn tamil-text">மேலும் அறிய</a>
+                        </div>
+                    </div>
+
+                    <!-- Nada Kuzhu -->
+                    <div class="kuzhu-card">
+                        <img src="images/dance2.JPG" alt="Nada Kuzhu">
+                        <div class="kuzhu-overlay">
+                            <h3 class="tamil-text">நாடனக் குழு</h3>
+                            <p class="tamil-text">பாரம்பரிய தமிழ் நடனம் மற்றும் இசை.</p>
+                            <a href="dance.html" class="kuzhu-btn tamil-text">மேலும் அறிய</a>
+                        </div>
+                    </div>
+
+                    <!-- Ilakiya Kuzhu -->
+                    <div class="kuzhu-card">
+                        <img src="images/ilakkiya.jpeg" alt="Ilakiya Kuzhu">
+                        <div class="kuzhu-overlay">
+                            <h3 class="tamil-text">இலக்கிய குழு</h3>
+                            <p class="tamil-text">தமிழ் இலக்கியம், கவிதை, கதை சொல்லல்.</p>
+                            <a href="ilakiya.html" class="kuzhu-btn tamil-text">மேலும் அறிய</a>
+                        </div>
+                    </div>
+
+                    <!-- Samuga Aivarangam -->
+                    <div class="kuzhu-card">
+                        <img src="images/samugam1.jpeg" alt="Samuga Aivarangam">
+                        <div class="kuzhu-overlay">
+                            <h3 class="tamil-text">சமூக ஆய்வரங்கம்</h3>
+                            <p class="tamil-text">சமூக ஆராய்ச்சி மற்றும் விவாத மன்றம்.</p>
+                            <a href="samuga.html" class="kuzhu-btn tamil-text">மேலும் அறிய</a>
+                        </div>
+                    </div>
+
+                    <!-- Oviya Kuzhu -->
+                    <div class="kuzhu-card">
+                        <img src="images/oviya.jpeg" alt="Oviya Kuzhu">
+                        <div class="kuzhu-overlay">
+                            <h3 class="tamil-text">ஓவிய குழு</h3>
+                            <p class="tamil-text">ஓவியம் மற்றும் பாரம்பரிய கலை வடிவங்கள்.</p>
+                            <a href="oviya.html" class="kuzhu-btn tamil-text">மேலும் அறிய</a>
+                        </div>
+                    </div>
+
+                    <!-- Ariviyal Tamil Mayam -->
+                    <div class="kuzhu-card">
+                        <img src="images/ariviyaltamilmayam.png" alt="Ariviyal Tamil Mayam">
+                        <div class="kuzhu-overlay">
+                            <h3 class="tamil-text">அறிவியல் தமிழ் மையம்</h3>
+                            <p class="tamil-text">தமிழ் அறிவியல் அறிவு வளர்ப்பு குழு.</p>
+                            <a href="ariviyal.html" class="kuzhu-btn tamil-text">மேலும் அறிய</a>
+                        </div>
+                    </div>
+
+                    <!-- Tholizhi Nutpa Kuzhu -->
+                    <div class="kuzhu-card">
+                        <img src="images/technical.png" alt="Tholizhi Nutpa Kuzhu">
+                        <div class="kuzhu-overlay">
+                            <h3 class="tamil-text">தொழிழி நுட்ப குழு</h3>
+                            <p class="tamil-text">டிஜிட்டல் பாதுகாப்பு மற்றும் தொழில்நுட்ப மேம்பாடு.</p>
+                            <a href="techinical.html" class="kuzhu-btn tamil-text">மேலும் அறிய</a>
+                        </div>
+                    </div>
+
+                    <!-- Pathirikai Kuzhu -->
+                    <div class="kuzhu-card">
+                        <img src="images/pathirikai.jpeg" alt="Pathirikai Kuzhu">
+                        <div class="kuzhu-overlay">
+                            <h3 class="tamil-text">பத்திரிகை குழு</h3>
+                            <p class="tamil-text">இதழியல் மற்றும் ஊடகக் குழு.</p>
+                            <a href="pathirikai.html" class="kuzhu-btn tamil-text">மேலும் அறிய</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Gallery Section -->
+        <section class="gallery-section" id="gallery">
+            <div class="container">
+                <div class="section-title">
+                    <h2 class="tamil-text">எங்கள் கலைக்கூடம்</h2>
+                    <p class="tamil-text">எங்கள் நிகழ்வுகள் மற்றும் செயல்பாடுகளின் சிறப்பம்சங்கள்</p>
+                </div>
+
+ <div class="scroll-container">
+  <div class="scroll-content">
+    <a href="images/dance1.JPG" target="_blank">
+      <img src="images/dance1.JPG" alt="Silambam 1">
+    </a>
+    <a href="images/silambam1.JPG" target="_blank">
+      <img src="images/silambam1.JPG" alt="Silambam 2">
+    </a>
+    <a href="images/dance3.JPG" target="_blank">
+      <img src="images/dance3.JPG" alt="Silambam 3">
+    </a>
+    <a href="images/oviya.jpeg" target="_blank">
+      <img src="images/oviya.jpeg" alt="Silambam 4">
+    </a>
+
+    <!-- duplicate for seamless loop -->
+    <a href="images/danace4.JPG" target="_blank">
+      <img src="images/danace4.JPG" alt="Silambam 1">
+    </a>
+    <a href="images/samugam2.jpeg" target="_blank">
+      <img src="images/samugam2.jpeg" alt="Silambam 2">
+    </a>
+    <a href="images/silambam3.JPG" target="_blank">
+      <img src="images/silambam3.JPG" alt="Silambam 3">
+    </a>
+    <a href="images/dance3.JPG" target="_blank">
+      <img src="images/dance3.JPG" alt="Silambam 4">
+    </a>
+  </div>
+</div>
+        </section>
+
+        <!-- Footer -->
+        <footer class="footer" id="contact">
+            <div class="container">
+                <div class="footer-content">
+                    <div class="footer-logo">
+                        <img src="logo.png" alt="Tamil Mandram Logo">
+                        <p class="tamil-text">தமிழ் மன்றம் தமிழ் மொழி, கலாச்சாரம் மற்றும் பாரம்பரியத்தை ஊக்குவிப்பதற்கும் பாதுகாப்பதற்கும் அர்ப்பணிக்கப்பட்டுள்ளது.</p>
+                    </div>
+                    <div class="footer-links">
+                        <div class="footer-links-column">
+                            <h4 class="tamil-text">பயனுள்ள இணைப்புகள்</h4>
+                            <ul>
+                                <li><a href="index.html" class="tamil-text">முகப்பு</a></li>
+                                <li><a href="#kuzhus" class="tamil-text">குழுக்கள்</a></li>
+                                <li><a href="#gallery" class="tamil-text">புகைப்படங்கள்</a></li>
+                            </ul>
+                        </div>
+                        <div class="footer-links-column">
+                            <h4 class="tamil-text">தொடர்பு கொள்ளுங்கள்</h4>
+                            <ul>
+                                <li><i class="fas fa-envelope"></i> <a href="mailto:info@tamilmandram.org" class="tamil-text">info@tamilmandram.org</a></li>
+                                <li><i class="fas fa-envelope"></i> <a href="mailto:info@tamilmandram.org" class="english-text" style="display: none;">info@tamilmandram.org</a></li>
+                                <li><i class="fas fa-phone"></i> <a href="tel:+919876543210" class="tamil-text">+91 98765 43210</a></li>
+                                <li><i class="fas fa-phone"></i> <a href="tel:+919876543210" class="english-text" style="display: none;">+91 98765 43210</a></li>
+                                <li><i class="fas fa-map-marker-alt"></i> <a href="#" class="tamil-text">சென்னை, தமிழ்நாடு</a></li>
+                                <li><i class="fas fa-map-marker-alt"></i> <a href="#" class="english-text" style="display: none;">Chennai, Tamil Nadu</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="footer-bottom">
+                    <p class="tamil-text">© 2025 தமிழ் மன்றம். அனைத்து உரிமைகளும் பாதுகாக்கப்பட்டவை.</p>
+                    <p class="english-text" style="display: none;">© 2025 Tamil Mandram. All Rights Reserved.</p>
+                </div>
+            </div>
+        </footer>
+
+        <!-- JavaScript for Language Toggle -->
+        <script>
+            const langToggle = document.getElementById('langToggle');
+            const tamilElements = document.querySelectorAll('.tamil-text');
+            const englishElements = document.querySelectorAll('.english-text');
+            let currentLang = 'tamil'; // Default language
+
+            langToggle.addEventListener('click', function() {
+                if (currentLang === 'tamil') {
+                    // Switch to English
+                    tamilElements.forEach(el => el.style.display = 'none');
+                    englishElements.forEach(el => el.style.display = 'block');
+                    langToggle.textContent = 'தமிழ்';
+                    currentLang = 'english';
+                } else {
+                    // Switch to Tamil
+                    englishElements.forEach(el => el.style.display = 'none');
+                    tamilElements.forEach(el => el.style.display = 'block');
+                    langToggle.textContent = 'English';
+                    currentLang = 'tamil';
+                }
+            });
+        </script>
+    </body>
+    </html>
